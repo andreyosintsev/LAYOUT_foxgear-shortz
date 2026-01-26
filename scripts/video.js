@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("video.js loaded");
 
     const videos = document.querySelectorAll(".video__player");
-    console.log("videos found:", videos.length);
 
     videos.forEach((video) => {
         video.addEventListener('pointerdown', () => {
@@ -54,15 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function hidePlayButton(video) {
         const buttonPlay = video.closest(".video").querySelector(".video__playbutton");
 
-        console.log(buttonPlay);
-
         buttonPlay.classList.add('not-visible');
     }
 
     function showPlayButton(video) {
         const buttonPlay = video.closest(".video").querySelector(".video__playbutton");
-
-        console.log(buttonPlay);
 
         buttonPlay.classList.remove('not-visible');
     }
