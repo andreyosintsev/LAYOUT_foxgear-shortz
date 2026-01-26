@@ -1,0 +1,126 @@
+.product-compare {
+    padding: 40px 48px;
+
+    font-family: var(--text-family-main, sans-serif);
+    font-size: var(--text-size-main, 16px);
+    color: var(--text-color-main, #000000);
+
+    background: #E5E5E5;
+
+    border-radius: var(--border-radius-hero-video, 20px);
+
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.product-compare__row {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(86px, 1fr));
+    gap: 10px;
+    padding: 16px 0;
+}
+
+.product-compare__row:first-child {
+    padding-top: 0;
+}
+
+.product-compare__row:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.product-compare__row_header {
+    font-weight: 600;
+
+    line-height: 1.6;
+}
+
+.product-compare__cell {
+    max-width: 260px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-compare__cell_header {
+    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.product-compare__cell_bold {
+    font-weight: 600;
+}
+
+.product-compare__clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-compare__link {
+    color: var(--text-color-main, #000000);
+
+    text-decoration: none;
+}
+
+.product-compare__link:hover {
+    text-decoration: none;
+}
+
+.product-compare__img {
+    display: block;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.product-compare__more {
+    color: var(--orange, #FFAA36);
+
+    font-weight: normal;
+
+    text-decoration: none;
+}
+
+.product-compare__more:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1146px) {
+    .product-compare {
+        padding: 20px 48px;
+    }
+
+    .product-compare__img {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product-compare {
+        padding: 20px 24px;
+
+        border-radius: 0;
+    }
+
+    .product-compare__row {
+        grid-template-columns: repeat(5, minmax(86px, 1fr));
+        gap: 10px 25px;
+        padding: 20px 0;
+    }
+
+    .product-compare__cell_header {
+        grid-column: span 5;
+    }
+
+    .product-compare__cell_span2 {
+        display: none;
+    }
+
+    .product-compare__img {
+        width: 80px;
+    }
+}
