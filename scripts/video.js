@@ -4,61 +4,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const videos = document.querySelectorAll(".video__player");
 
     videos.forEach((video) => {
-        video.addEventListener('pointerdown', () => {
-            if (video.paused) {
-                playVideo(video);
-            } else {
-                pauseVideo(video);
-            }
-        });
+        const togglePlay = () => (video.paused ? playVideo(video) : pauseVideo(video));
+        const pauseIfPlaying = () => !video.paused && pauseVideo(video);
 
-        video.addEventListener('pointerup', () => {
-            if (!video.paused) {
-                pauseVideo(video);
-            }
-        });
+        if (video.classList.contains("video__player_noplayonhover")) {
+            video.addEventListener("click", togglePlay);
+            return;
+        }
 
-        video.addEventListener('pointerleave', () => {
-            if (!video.paused) {
-                pauseVideo(video);
-            }
-        });
-
-        video.addEventListener("mouseenter", () => {
-            if (video.paused) {
-                playVideo(video);
-            } else {
-                pauseVideo(video);
-            }
-        });
-
-        video.addEventListener("mouseleave", () => {
-            if (!video.paused) {
-                pauseVideo(video);
-            }
-        })
+        video.addEventListener("pointerdown", togglePlay);
+        video.addEventListener("pointerup", pauseIfPlaying);
+        video.addEventListener("pointerleave", pauseIfPlaying);
+        video.addEventListener("mouseenter", togglePlay);
+        video.addEventListener("mouseleave", pauseIfPlaying);
     });
 
     function playVideo(video) {
-        videos.forEach((video) => pauseVideo(video));
+        videos.forEach(pauseVideo);
         video.play();
-        hidePlayButton(video);
+        setPlayButtonVisibility(video, false);
     }
 
     function pauseVideo(video) {
         video.pause();
-        showPlayButton(video);
+        setPlayButtonVisibility(video, true);
     }
 
-    function hidePlayButton(video) {
-        const buttonPlay = video.closest(".video").querySelector(".video__playbutton");
+    function setPlayButtonVisibility(video, visible) {
+        const buttonPlay = video.closest(".video")?.querySelector(".video__playbutton");
 
-        buttonPlay.classList.add('not-visible');
-    }
+        if (!buttonPlay) {
+            return;
+        }
 
-    function showPlayButton(video) {
-        const buttonPlay = video.closest(".video").querySelector(".video__playbutton");
-
-        buttonPlay.classList.remove('not-visible');
+        if (visible) {
+            buttonPlay.classList.remove("not-visible");
+        } else {
+            buttonPlay.classList.add("not-visible");
+        }
     }
 });

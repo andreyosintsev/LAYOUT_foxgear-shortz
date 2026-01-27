@@ -63,15 +63,24 @@
     padding-bottom: 60px;
     margin-bottom: 20px;
 
-    border-bottom: 1px solid #D6D6D6;
+    /* border-bottom: 1px solid #D6D6D6; */
 }
 
 .panel-single__details {
+    padding-top: 20px;
+
+    border-top: 1px solid #D6D6D6;
     border-bottom: 1px solid #D6D6D6;
 }
 
 .panel-single__features-header {
     font-weight: var(--text-weight-bold, 700);
+}
+
+@media screen and (max-width: 900px) {
+    .panel-single__details {
+        padding-top: 10px;
+    }
 }
 
 @media (max-width: 768px) {

@@ -23,7 +23,7 @@
     gap: 50px;
 }
 
-.single-slider_4frames .single-slider__cards {
+.single-slider_4cards .single-slider__cards {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
@@ -37,7 +37,7 @@
         width: clamp(898px, calc(114vw + 100px), 1240px);
     }
 
-    .single-slider_4frames .single-slider__cards {
+    .single-slider_4cards .single-slider__cards {
         width: clamp(1120px, calc(157.33vw + 18.67px), 1592px);
     }
 }
@@ -48,7 +48,7 @@
         gap: 20px
     }
 
-    .single-slider_4frames .single-slider__cards {
+    .single-slider_4cards .single-slider__cards {
         width: clamp(1108px, calc(291.76vw + 57.65px), 2100px);
     }
 }

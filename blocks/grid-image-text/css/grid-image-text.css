@@ -7,6 +7,11 @@
     padding: 0 125px;
 }
 
+.grid-image-text_ltr {
+    grid-template-columns: 6fr 1fr 5fr;
+    grid-template-areas: "text gap image";
+}
+
 .grid-image-text__image {
     grid-area: image;
     width: 100%;
@@ -18,6 +23,10 @@
     border-radius: 5px;
 
     box-shadow:  0 2px 8px rgba(26, 26, 26, 0.1);
+}
+
+.grid-image-text__img_noshadow {
+    box-shadow: none;
 }
 
 .grid-image-text__text {

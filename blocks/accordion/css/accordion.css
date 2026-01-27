@@ -35,7 +35,7 @@
     content: '';
     display: block;
     position: absolute;
-    top: 50%;
+    top: 73%;
     right: 16px;
     width: 24px;
     height: 16px;
@@ -55,7 +55,7 @@
 
 .accordion__item-content {
     max-height: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px 0 0 0;
 
     overflow: hidden;
