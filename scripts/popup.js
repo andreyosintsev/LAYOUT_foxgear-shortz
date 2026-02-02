@@ -111,7 +111,7 @@
 
             const popupFormData = new FormData(popupForm);
 
-            fetch('api/sendmail.php', {
+            fetch('../../api/sendmail.php', {
                 method: 'POST',
                 body: popupFormData
             })
